@@ -1,0 +1,1323 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="一之江">
+      
+      
+        <link rel="canonical" href="https://shiinahiiragi.github.io/note/foundation/set/real/">
+      
+      <link rel="icon" href="../../../extra/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>3 实数理论 - 数理逻辑</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../extra/config.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="数理逻辑" class="md-header__button md-logo" aria-label="数理逻辑" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75z"/><path fill-rule="evenodd" d="M5 8.75A.75.75 0 0 1 5.75 8h11.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 8.75zm0 4a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数理逻辑
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 实数理论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ShiinaHiiragi/note/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        通用
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../logic/proposition/" class="md-tabs__link md-tabs__link--active">
+        数学基础
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="数理逻辑" class="md-nav__button md-logo" aria-label="数理逻辑" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75z"/><path fill-rule="evenodd" d="M5 8.75A.75.75 0 0 1 5.75 8h11.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 8.75zm0 4a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75z"/></svg>
+
+    </a>
+    数理逻辑
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ShiinaHiiragi/note/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        通用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="通用" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          通用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        许可证
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        数学基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="数学基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数学基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        一、一阶逻辑
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="一、一阶逻辑" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          一、一阶逻辑
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/proposition/" class="md-nav__link">
+        1 命题逻辑
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/predicate/" class="md-nav__link">
+        2 谓词逻辑
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        二、公理集合论
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="二、公理集合论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、公理集合论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zfc/" class="md-nav__link">
+        1 ZFC 集合论
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relation/" class="md-nav__link">
+        2 关系与映射
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3 实数理论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        3 实数理论
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 自然数的构造
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 自然数的构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    3.1.1 最小归纳集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    3.1.2 自然数集的构建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312_1" class="md-nav__link">
+    3.1.2 归纳定义
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 整数的构造
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 有理数的构造
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 算数超滤
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 算数超滤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1 自然数集上的滤子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    3.4.2 超滤变换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343" class="md-nav__link">
+    3.4.3 非主算术超滤模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344" class="md-nav__link">
+    3.4.4 自然数数列的延伸
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5 实数理论
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 实数理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-archimedes" class="md-nav__link">
+    3.5.1 Archimedes 序域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    3.5.2 实数的构造
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordinal/" class="md-nav__link">
+        4 序数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cardinal/" class="md-nav__link">
+        5 势与基数
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        五、模型论
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="五、模型论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          五、模型论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/model/" class="md-nav__link">
+        1 结构与模型
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 自然数的构造
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 自然数的构造">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    3.1.1 最小归纳集
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    3.1.2 自然数集的构建
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312_1" class="md-nav__link">
+    3.1.2 归纳定义
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 整数的构造
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 有理数的构造
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 算数超滤
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 算数超滤">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    3.4.1 自然数集上的滤子
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    3.4.2 超滤变换
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343" class="md-nav__link">
+    3.4.3 非主算术超滤模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344" class="md-nav__link">
+    3.4.4 自然数数列的延伸
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5 实数理论
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 实数理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351-archimedes" class="md-nav__link">
+    3.5.1 Archimedes 序域
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    3.5.2 实数的构造
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ShiinaHiiragi/note/edit/master/docs/foundation/set/real.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="3">3 实数理论</h1>
+<h2 id="31">3.1 自然数的构造</h2>
+<h3 id="311">3.1.1 最小归纳集</h3>
+<ol>
+<li>由无限公理可知归纳集 <span class="arithmatex">\(s\)</span> 存在, 所以 <span class="arithmatex">\(s\)</span> 取定. 对于所有的归纳集族 <span class="arithmatex">\(a\)</span>, 定义归纳集 <span class="arithmatex">\(\omega = \{x\in s|\forall t\in a(x\in t)\}\)</span></li>
+<li>关于归纳集 <span class="arithmatex">\(\omega\)</span> 的性质<ol>
+<li><span class="arithmatex">\(\omega\)</span> 是最小归纳集, <span class="arithmatex">\(\omega\)</span> 是实无限 (无限集)</li>
+<li>若 <span class="arithmatex">\(x\)</span> 为可递集, 则 <span class="arithmatex">\(x'\)</span> 为可递集</li>
+<li><span class="arithmatex">\(\omega\)</span> 的元素均为可递集</li>
+<li><span class="arithmatex">\(\forall x\in \omega (x\notin x)\)</span></li>
+<li><span class="arithmatex">\(\forall x,y\in \omega (x\neq y\to x'\neq y')\)</span></li>
+</ol>
+</li>
+</ol>
+<h3 id="312">3.1.2 自然数集的构建</h3>
+<ol>
+<li>
+<p>由以上性质可知集合 <span class="arithmatex">\(\omega\)</span> 具有以下性质, 这说明 <span class="arithmatex">\(\omega\)</span> 具有自然数 <span class="arithmatex">\(\mathrm{Peano}\)</span> 公理所规定的全部性质</p>
+<ol>
+<li><span class="arithmatex">\(\varnothing \in \omega\)</span></li>
+<li><span class="arithmatex">\(x\in \omega \to x'\in \omega\)</span></li>
+<li><span class="arithmatex">\(x'\neq \varnothing\)</span></li>
+<li><span class="arithmatex">\(\forall x,y\in \omega (x\neq y\to x'\neq y')\)</span></li>
+<li>设 <span class="arithmatex">\(a\subset \omega\)</span>, 有 <span class="arithmatex">\((\varnothing \in a\wedge (x\in a\to x'\in a))\to a=\omega\)</span></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title"><span class="arithmatex">\(\mathrm{Peano}\)</span> 公理体系</p>
+<p>在 <span class="arithmatex">\(\mathrm{Peano}\)</span> 公理体系中可以推出下列定理, 下节构造整数集合时需要用到这些性质:</p>
+<ol>
+<li>加法<ul>
+<li>加法交换律: <span class="arithmatex">\(\forall a,b\in N(a+b=b+a)\)</span></li>
+<li>加法结合律: <span class="arithmatex">\(\forall a,b,c\in N((a+b)+c=a+(b+c))\)</span></li>
+</ul>
+</li>
+<li>乘法<ul>
+<li>乘法交换律: <span class="arithmatex">\(\forall a,b\in N(a\cdot b=b\cdot a)\)</span></li>
+<li>乘法结合律: <span class="arithmatex">\(\forall a,b,c\in N((a\cdot b)\cdot c=a\cdot (b\cdot c))\)</span></li>
+<li>乘法对加法的分配律: <span class="arithmatex">\(\forall a,b,c\in N(a\cdot (b+c)=a\cdot b+a\cdot c)\)</span></li>
+</ul>
+</li>
+<li>本原元<ul>
+<li>零元: <span class="arithmatex">\(\forall a\in N(a+0=a)\)</span></li>
+<li>单位元: <span class="arithmatex">\(\forall a\in N(a\cdot 1=a)\)</span></li>
+<li><span class="arithmatex">\(0\neq 1\)</span></li>
+</ul>
+</li>
+<li>序<ul>
+<li>反自反性: <span class="arithmatex">\(n\nless n\)</span></li>
+<li>可递性: <span class="arithmatex">\((m&lt;n\wedge n&lt;k)\to m&lt;k\)</span></li>
+<li>三歧性: <span class="arithmatex">\(m&lt;n\vee m=n\vee n&lt;m\)</span></li>
+<li>加法保序性: <span class="arithmatex">\(m&lt;n\to m+k&lt;n+k\)</span></li>
+<li>乘法保序性: <span class="arithmatex">\((m&lt;n\wedge k\neq 0)\to mk&lt;nk\)</span></li>
+</ul>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(\omega\)</span> 为自然数集 <span class="arithmatex">\(\mathbb{N}\)</span>, 且有</p>
+<div class="arithmatex">\[
+\displaylines{0=\varnothing ,\\
+1=0'=0\cup\{0\}=\{0\},\\
+2=1'=1\cup\{1\}=\{0,1\},\\
+\cdots }
+\]</div>
+</li>
+</ol>
+<h3 id="312_1">3.1.2 归纳定义</h3>
+<ul>
+<li>
+<p>递归定理: 设集合 <span class="arithmatex">\(a\)</span> 与函数 <span class="arithmatex">\(h:a\to a, x_0\in a\)</span>, 则 <span class="arithmatex">\(\exists !f:\omega \to a(f(0)=x_0 \wedge f(n')=h(f(n)))\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">运算符的定义</p>
+<p>递归定义可以证明运算符递归定义的合理性</p>
+<ol>
+<li>取 <span class="arithmatex">\(a=\omega, x_0=m\in \omega, h(n)=n'\)</span>, 则 <span class="arithmatex">\(\exists !f:\omega \to a(f(0)=x_0\wedge f(n')=f(n)')\)</span>. <span class="arithmatex">\(f\)</span> 仅与 <span class="arithmatex">\(m\)</span> 有关, 对 <span class="arithmatex">\(\forall m\exists !f_m\)</span>, 令 <span class="arithmatex">\(f_m(n)=m+n\)</span>. 则有 <span class="arithmatex">\(f_m(0)=m\wedge f_m(n')=f_m(n)'\)</span>, 这样可以定义加法</li>
+<li>取 <span class="arithmatex">\(a=\omega, x_0=0, h(n)=n+m\)</span>, 同理可以定义乘法</li>
+<li>取 <span class="arithmatex">\(a=\omega, x_0=1, h(n)=nm\)</span>, 同理可以定义乘方</li>
+</ol>
+</div>
+</li>
+</ul>
+<h2 id="32">3.2 整数的构造</h2>
+<ol>
+<li>构造 <span class="arithmatex">\(N^2\)</span> 上的二元关系 <span class="arithmatex">\(R=\{((m,n),(p,q))|m,n,p,q\in N \wedge m+q=n+p\}\)</span>, 则 <span class="arithmatex">\(R\)</span> 是等价关系. 其商集用 <span class="arithmatex">\(Z\)</span> 表示: <span class="arithmatex">\(Z=N^2/\sim =\{[(m,n)]|m,n\in N\}\)</span></li>
+<li>在 <span class="arithmatex">\(Z\)</span> 上定义的等价类运算需要与所选取的代表无关<ol>
+<li><span class="arithmatex">\(Z\)</span> 上的加法: 规定 <span class="arithmatex">\([(m,n)]+[(p,q)]=[(m+p,n+q)]\)</span><ul>
+<li>交换律: <span class="arithmatex">\(\forall a,b\in Z(a+b=b+a)\)</span></li>
+<li>结合律: <span class="arithmatex">\(\forall a,b,c\in Z((a+b)+c=a+(b+c))\)</span></li>
+<li>零元: 令 <span class="arithmatex">\(\overline{0}=[(0,0)]\)</span>, 则有 <span class="arithmatex">\(\forall a\in Z(a+\overline{0} =a)\)</span></li>
+<li>负元: <span class="arithmatex">\(\forall a\in Z\exists !b\in Z(a+b=\overline{0})\)</span>. 也就是说, <span class="arithmatex">\(Z\)</span> 中每一个元素都有自己唯一的负元, <span class="arithmatex">\(-[(m,n)]=[(n,m)]\)</span>. 从而定义减法: <span class="arithmatex">\(b-a=b+(-a)\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(Z\)</span> 上的乘法: 规定 <span class="arithmatex">\([(m,n)]\cdot [(p,q)]=[(mp+nq,mq+np)]\)</span><ul>
+<li>交换律: <span class="arithmatex">\(\forall a,b\in Z(a\cdot b=b\cdot a)\)</span></li>
+<li>结合律: <span class="arithmatex">\(\forall a,b,c\in Z((a\cdot b)\cdot c=a\cdot (b\cdot c))\)</span></li>
+<li>对加法的分配律: <span class="arithmatex">\(\forall a,b,c\in Z(a\cdot (b+c)=a\cdot b+a\cdot c)\)</span></li>
+<li>单位元: 令 <span class="arithmatex">\(\overline{1}=[(1,0)]\)</span>, 则 <span class="arithmatex">\(\forall a\in Z(a\cdot \overline{1}=a)\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(Z\)</span> 上的序: 规定 <span class="arithmatex">\([(m,n)]&lt;[(p,q)]\leftrightarrow m+q&lt;n+p\)</span><ul>
+<li>反自反性: <span class="arithmatex">\(\forall a\in Z(a\nless a)\)</span></li>
+<li>可递性: <span class="arithmatex">\(\forall a,b,c\in Z((a&lt;b\wedge b&lt;c)\to a&lt;c)\)</span></li>
+<li>三歧性: <span class="arithmatex">\(\forall a,b\in Z(a&lt;b\vee a=b\vee b&lt;a)\)</span></li>
+<li>加法保序性: <span class="arithmatex">\(\forall a,b,c\in Z(a&lt;b\to a+c&lt;b+c)\)</span></li>
+<li>乘法保序性: <span class="arithmatex">\(\forall a,b,c\in Z(c&gt;\overline{0}\to (a&lt;b\to a\cdot c&lt;b\cdot c))\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>嵌入<ul>
+<li>考察 <span class="arithmatex">\(\overline{N}=\{[(0,0)], [(1,0)], \cdots , [(n,0)], \cdots \}\)</span>, 记 <span class="arithmatex">\(\overline{n}=[(n,0)]\)</span>, 则 <span class="arithmatex">\(\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, \cdots \}\)</span> 具有性质:<ol>
+<li><span class="arithmatex">\(\overline{m}+\overline{n}=\overline{m+n}\)</span></li>
+<li><span class="arithmatex">\(\overline{m}\cdot \overline{n}=\overline{mn}\)</span></li>
+<li><span class="arithmatex">\(m&lt;n\leftrightarrow \overline{m}&lt;\overline{n}\)</span></li>
+</ol>
+</li>
+<li>由于 <span class="arithmatex">\(\overline{N}\)</span> 构成 <span class="arithmatex">\(Z\)</span> 的一个封闭子集, 令 <span class="arithmatex">\(f(n)=\overline{n}\in \overline{N} \subset Z\)</span>, 则 <span class="arithmatex">\(f:N\to \overline{N}\)</span> 具有性质:<ol>
+<li><span class="arithmatex">\(f(m+n)=f(m)+g(n)\)</span></li>
+<li><span class="arithmatex">\(f(mn)=f(m)\cdot f(n)\)</span></li>
+<li><span class="arithmatex">\(m&lt;n\to f(m)&lt;f(n)\)</span></li>
+</ol>
+</li>
+<li>以上性质说明 <span class="arithmatex">\(f\)</span> 是从 <span class="arithmatex">\(N\)</span> 到 <span class="arithmatex">\(\overline{N}\)</span> 的保序双射. 此时称 <span class="arithmatex">\(N\)</span> 与 <span class="arithmatex">\(\overline{N}\)</span> 同构, 并称 <span class="arithmatex">\(f\)</span> 把 <span class="arithmatex">\(N\)</span> 同构嵌入 <span class="arithmatex">\(Z\)</span></li>
+</ul>
+</li>
+<li>
+<p>任取 <span class="arithmatex">\([(m,n)]\in Z\)</span>, 若 <span class="arithmatex">\(m\leqslant n\)</span>, 设 <span class="arithmatex">\(m=n+k\)</span>, 则 <span class="arithmatex">\([(m,n)]=[(k,0)]=\overline{k}\)</span>; 若 <span class="arithmatex">\(m&lt;n\)</span>, 设 <span class="arithmatex">\(n=m+l\)</span>, 则 <span class="arithmatex">\([(m,n)]=[(0,l)]=-\overline{l}\)</span>. 于是</p>
+<div class="arithmatex">\[
+Z=\{\cdots , -\overline{n}, \cdots , -\overline{2}, -\overline{1}, \overline{0}, \overline{1}, \overline{2}, \cdots , \overline{n}, \cdots \}
+\]</div>
+</li>
+<li>
+<p>将上述 <span class="arithmatex">\(\overline{n}\)</span> 转写为 <span class="arithmatex">\(n\)</span>, 将 <span class="arithmatex">\(\mathbb{Z}\)</span> 称作整数集. 与 <span class="arithmatex">\(N\)</span> 相比, <span class="arithmatex">\(N\)</span> 的结构更加对称, 这个结构记作 <span class="arithmatex">\(\left&lt; Z,+,\cdot ,&lt;,0,1\right&gt;\)</span></p>
+</li>
+</ol>
+<h2 id="33">3.3 有理数的构造</h2>
+<ol>
+<li>定义二元关系 <span class="arithmatex">\(R\subset (Z\times (Z-\{0\}))^2\)</span> 有 <span class="arithmatex">\(R=\{((a,b),(c,d))\in (Z\times (Z-\{0\}))^2|ad=bc\}\)</span> 是一个等价关系. 记 <span class="arithmatex">\(Q=(Z\times (Z-\{0\}))/R=\{[(a,b)]|a,b\in Z \wedge b\neq 0\}\)</span></li>
+<li>定义仿照整数的构造过程, 保证定义的合理性, 下列性质被称作序域性质<ol>
+<li><span class="arithmatex">\(Q\)</span> 上的加法: 规定 <span class="arithmatex">\([(a,b)]+[(c,d)]=[(ad+bc,bd)]\)</span><ul>
+<li>交换律: <span class="arithmatex">\(\forall r,s\in Q(r+s=s+r)\)</span></li>
+<li>结合律: <span class="arithmatex">\(\forall r,s,t\in Q((r+s)+t=r+(s+t))\)</span></li>
+<li>零元: 令 <span class="arithmatex">\(\overline{0}=[(0,a)], a\neq 0\)</span>, 则有 <span class="arithmatex">\(\forall r\in Q(r+\overline{0} =r)\)</span></li>
+<li>负元: <span class="arithmatex">\(\forall r\in Q\exists !s\in Q(r+s=\overline{0})\)</span>. 也就是说, <span class="arithmatex">\(Q\)</span> 中每一个元素 <span class="arithmatex">\(r\)</span> 都有自己唯一的负元 <span class="arithmatex">\(-r\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(Z\)</span> 上的乘法: 规定 <span class="arithmatex">\([(a,b)]\cdot [(c,d)]=[(ac,bd)]\)</span><ul>
+<li>交换律: <span class="arithmatex">\(\forall r,s\in Q(r\cdot s=s\cdot r)\)</span></li>
+<li>结合律: <span class="arithmatex">\(\forall r,s,t\in Q((r\cdot s)\cdot t=r\cdot (s\cdot t))\)</span></li>
+<li>对加法的分配律: <span class="arithmatex">\(\forall r,s,t\in Q(r\cdot (s+t)=r\cdot s+r\cdot t)\)</span></li>
+<li>单位元: 令 <span class="arithmatex">\(\overline{1}=[(a,a)], a\neq 0\)</span>, 则 <span class="arithmatex">\(\forall r\in Q(r\cdot \overline{1}=r)\)</span></li>
+<li>逆元: <span class="arithmatex">\(\forall r=[(a,b)]\in Q, r\neq \overline{0}\)</span>, 则 <span class="arithmatex">\(\exists !s\in Q(r\cdot s=\overline{1})\)</span>. 记 <span class="arithmatex">\(s=r^{-1}=[(b,a)]\)</span>. 由此定义除法 <span class="arithmatex">\(r\div s=r\cdot s^{-1}\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(Z\)</span> 上的序: 设 <span class="arithmatex">\(r=[(a,b)],s=[(c,d)]\wedge (b,d&gt;0)\)</span> (若 <span class="arithmatex">\(b&lt;0\)</span>, 则写 <span class="arithmatex">\([(a,b)]=[(-a,-b)]\)</span>). 规定 <span class="arithmatex">\(r&lt;s\leftrightarrow ad&lt;bc\)</span><ul>
+<li>反自反性: <span class="arithmatex">\(\forall r\in Q(r\nless r)\)</span></li>
+<li>可递性: <span class="arithmatex">\(\forall r,s,t\in Q((r&lt;s\wedge s&lt;t)\to r&lt;t)\)</span></li>
+<li>三歧性: <span class="arithmatex">\(\forall r,s\in Q(r&lt;s\vee r=s\vee s&lt;r)\)</span></li>
+<li>加法保序性: <span class="arithmatex">\(\forall r,s,t\in Q(r&lt;s\to r+t&lt;s+t)\)</span></li>
+<li>乘法保序性: <span class="arithmatex">\(\forall r,s,t\in Q(t&gt;\overline{0}\to (r&lt;s\to r\cdot t&lt;s\cdot t))\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>嵌入<ul>
+<li>考察 <span class="arithmatex">\(\overline{Z}=\{[(p,1)]|p\in Z\}\)</span>, 记 <span class="arithmatex">\(\overline{n}=[(n,1)]\)</span>, 则 <span class="arithmatex">\(-\overline{n}=[(-n,1)]\)</span>. <span class="arithmatex">\(\overline{Z}\)</span> 构成 <span class="arithmatex">\(Q\)</span> 的封闭子集<ul>
+<li><span class="arithmatex">\([(p,1)]+[(q,1)]=[(p+q,1)]\)</span></li>
+<li><span class="arithmatex">\([(p,1)]\cdot [(q,1)]=[(pq,1)]\)</span></li>
+<li><span class="arithmatex">\(p&lt;q\leftrightarrow [(p,1)]&lt;[(q,1)]\)</span></li>
+</ul>
+</li>
+<li>定义 <span class="arithmatex">\(f:Z\to \overline{Z}\)</span> 有 <span class="arithmatex">\(f(p)=[(p,1)]\)</span>, 则 <span class="arithmatex">\(f\)</span> 是一个封闭的保序双射. 此时称 <span class="arithmatex">\(Q\)</span> 与 <span class="arithmatex">\(\overline{Q}\)</span> 同构, 并称 <span class="arithmatex">\(f\)</span> 把 <span class="arithmatex">\(Q\)</span> 同构嵌入 <span class="arithmatex">\(Q\)</span></li>
+</ul>
+</li>
+<li>将结果写成分数形式: <span class="arithmatex">\([(p,q)]=\dfrac{[(p,1)]}{[(q,1)]}\)</span>, 于是有 <span class="arithmatex">\(Q=\{\dfrac{[(p,1)]}{[(q,1)]}|p,q\in Z\wedge q\neq 0\}\)</span>. 把所有形如 <span class="arithmatex">\([(p,1)]\)</span> 的元素写成 <span class="arithmatex">\(p\)</span>, 称之为新整数. 于是 <span class="arithmatex">\(Z\subset Q=\{\dfrac{p}{q}|p,q\in Z\wedge q\neq 0\}\)</span>, 将 <span class="arithmatex">\(\mathbb{Q}\)</span> 称为有理数集</li>
+<li>与 <span class="arithmatex">\(Z\)</span> 相比, <span class="arithmatex">\(Q\)</span> 是其扩张, 更具有对称性. 有理数集形成了新的结构 <span class="arithmatex">\(\left&lt; Q,+,\cdot ,&lt;,0,1\right&gt;\)</span></li>
+</ol>
+<h2 id="34">3.4 算数超滤</h2>
+<h3 id="341">3.4.1 自然数集上的滤子</h3>
+<ol>
+<li>定义<ol>
+<li>滤子: 设 <span class="arithmatex">\(N\)</span> 的子集族 <span class="arithmatex">\(F\subset \mathcal{P}(N)\)</span> 满足下列条件, 则 <span class="arithmatex">\(F\)</span> 称作 <span class="arithmatex">\(N\)</span> 上的滤子<ul>
+<li><span class="arithmatex">\(\varnothing \notin F, N\in F\)</span></li>
+<li>对交封闭: <span class="arithmatex">\(a,b\in F\to a\cap b\in F\)</span></li>
+<li>大集性质: <span class="arithmatex">\(((a\subset b\subset N) \wedge a\in F)\to b\in F\)</span></li>
+</ul>
+</li>
+<li>极大滤子: 若 <span class="arithmatex">\(F\)</span> 有 <span class="arithmatex">\(\forall G\supset F\to G=F\)</span>, 则称 <span class="arithmatex">\(F\)</span> 为极大滤子</li>
+<li>超滤: 若 <span class="arithmatex">\(N\)</span> 上的滤子 <span class="arithmatex">\(F\)</span> 有极大性, 即 <span class="arithmatex">\(\forall a\subset N(a\in F\vee(N-a)\in F)\)</span>, 则 <span class="arithmatex">\(F\)</span> 为 <span class="arithmatex">\(N\)</span> 上的超滤. <span class="arithmatex">\(N\)</span> 上全体超滤组成的集合为 <span class="arithmatex">\(\beta N\)</span> 或 <span class="arithmatex">\(\beta \omega\)</span></li>
+<li>算术超滤: 设 <span class="arithmatex">\(F\in \beta N\)</span>, 若 <span class="arithmatex">\(f(F)=g(F)\to f=_Fg\)</span>, 则称 <span class="arithmatex">\(F\)</span> 为算术超滤</li>
+<li>自由超滤: 若超滤 <span class="arithmatex">\(F\)</span> 有 <span class="arithmatex">\(N\)</span> 的任一有限子集 <span class="arithmatex">\(\notin F\)</span>, 则称 <span class="arithmatex">\(F\)</span> 为 <span class="arithmatex">\(N\)</span> 上的自由超滤</li>
+</ol>
+</li>
+<li>滤子的例子<ul>
+<li><span class="arithmatex">\(\{N\}\)</span> 是一个滤子, 但不是超滤. 称作 <span class="arithmatex">\(N\)</span> 上的平凡滤子</li>
+<li><span class="arithmatex">\(F_{\sigma}=\{a\subset N||N-a|&lt;+\infty \}\)</span> 是一个滤子, 但不是超滤. <span class="arithmatex">\(F_{\sigma}\)</span> 称作余有限滤子或 Fréchet 滤子</li>
+<li>对 <span class="arithmatex">\(\forall i\in N\)</span>, <span class="arithmatex">\(F_i=\overline{n} =\{a\subset N|i\in a\}\)</span> 是超滤, 但不是自由超滤. 称 <span class="arithmatex">\(F_i\)</span> 为主超滤</li>
+</ul>
+</li>
+<li>滤子与超滤的性质<ol>
+<li>超滤要么是自由超滤, 要么是主超滤<ul>
+<li>所有主超滤都是非自由的超滤, 即自由超滤一定是非主超滤</li>
+<li><span class="arithmatex">\(N\)</span> 上非自由超滤一定是某个主超滤</li>
+</ul>
+</li>
+<li>设 <span class="arithmatex">\(F\)</span> 是 <span class="arithmatex">\(N\)</span> 上的超滤, 且 <span class="arithmatex">\(a_1\cup a_2=a\in F\)</span>, 则有 <span class="arithmatex">\(a_1\in F\vee a_2\in F\)</span>. 注意到令 <span class="arithmatex">\(a_1=a,a_2=N-a\)</span>, 则该定理是超滤的定义</li>
+<li>设 <span class="arithmatex">\(F\)</span> 为超滤 <span class="arithmatex">\(\leftrightarrow F\)</span> 是极大滤子</li>
+<li>设 <span class="arithmatex">\(F\)</span> 是超滤, 则有 <span class="arithmatex">\(F\)</span> 是自由超滤 <span class="arithmatex">\(\leftrightarrow F\supset F_{\sigma}\)</span></li>
+<li><span class="arithmatex">\(N\)</span> 的子集族 <span class="arithmatex">\(F\)</span> 若具有以下性质则是 <span class="arithmatex">\(N\)</span> 上的超滤:<ul>
+<li><span class="arithmatex">\(\varnothing \in F\)</span></li>
+<li>对交封闭: <span class="arithmatex">\(a,b\in F\to a\cap b\in F\)</span></li>
+<li>极大性: <span class="arithmatex">\(\forall a\subset N(a\in F\vee (N-a)\in F)\)</span></li>
+</ul>
+</li>
+<li>主超滤都是算术超滤, 自由超滤中有算术超滤也有非算术超滤(非主算术超滤)</li>
+</ol>
+</li>
+</ol>
+<h3 id="342">3.4.2 超滤变换</h3>
+<ol>
+<li>设 <span class="arithmatex">\(F\in \beta N,f\in ^NN\)</span>, 则定义 <span class="arithmatex">\(G=f[F]=\{a\subset N|f^{-1}[a]\in F\}\)</span> 也为 <span class="arithmatex">\(N\)</span> 上的超滤<ul>
+<li>运算 <span class="arithmatex">\(f\)</span> 称作超滤空间上的超滤变换, <span class="arithmatex">\(f:\beta N\to \beta N\)</span> 事实上是用同一个符号表示的函数 <span class="arithmatex">\(f:N\to N\)</span> 的扩张</li>
+</ul>
+</li>
+<li>设 <span class="arithmatex">\(f,g\in ^NN,F\in \beta N\)</span>, 若 <span class="arithmatex">\(\{n|f(n)=g(n)\}\in F\)</span>, 则称 <span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 关于 <span class="arithmatex">\(F\)</span> 几乎相等, 记作 <span class="arithmatex">\(f=_Fg\)</span></li>
+<li>超滤变换的性质<ol>
+<li>主超滤的像 <span class="arithmatex">\(f(F)\)</span> 仍是主超滤: 设 <span class="arithmatex">\(f\in ^NN,n\in N\)</span>, 则 <span class="arithmatex">\(f(\overline{n}) =\overline{f(n)}\)</span></li>
+<li>算术超滤的像 <span class="arithmatex">\(f(F)\)</span> 仍是算术超滤: 设 <span class="arithmatex">\(f\in ^NN,m\in \beta N\)</span>, 则 <span class="arithmatex">\(g(f(F))=h(f(F))\to g=_{f(F)}h\)</span></li>
+<li>非主超滤的像 <span class="arithmatex">\(f(F)\)</span> 不一定仍是非主超滤, 有可能退变为主超滤: 设 <span class="arithmatex">\(F\in \beta N\)</span>, 且 <span class="arithmatex">\(f\in ^NN,\forall n\in b\in F(f(n)=m)\)</span>, 则有 <span class="arithmatex">\(f(F)=\overline{m}\)</span>, 取 <span class="arithmatex">\(b=N\)</span>, 则 <span class="arithmatex">\(f\)</span> 为常值函数</li>
+<li>设 <span class="arithmatex">\(f,g\in ^NN,F\in \beta N\)</span>, 则有 <span class="arithmatex">\(f=_Fg\to f(F)=g(F)\)</span>, 反之则不一定成立</li>
+</ol>
+</li>
+</ol>
+<h3 id="343">3.4.3 非主算术超滤模型</h3>
+<ol>
+<li>对于某个取定的非主算术超滤做所有可能的变换, 得到 <span class="arithmatex">\(^*N=\{f(F)|f\in ^NN\}\)</span>, 它包含了所有的主超滤, 由常值函数对 <span class="arithmatex">\(F\)</span> 变换而来</li>
+<li><span class="arithmatex">\(^*N\)</span> 的运算可以得到结构 <span class="arithmatex">\(\left&lt; ^*N,\overline{0},+,\cdot ,f,g,h,\cdots \right&gt;\)</span>, 它的语言是 <span class="arithmatex">\(\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}\)</span>. <span class="arithmatex">\(\mathcal{L}\)</span> 中包含所有一元自然数函数符<ul>
+<li>定义加法: <span class="arithmatex">\(f(F)+g(F)=(f+g)(F))\)</span>, 乘法: <span class="arithmatex">\(f(F)\cdot g(F)=(f\cdot g)(F))\)</span>. 其中, <span class="arithmatex">\((f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)\)</span></li>
+<li>每个 <span class="arithmatex">\(h\in ^NN\)</span> 对应 <span class="arithmatex">\(*N\)</span> 上的一个一元运算: <span class="arithmatex">\(h(f(F))=(h\circ f)(F) h\in ^{^*N}{^*N}\)</span></li>
+<li>定义序 <span class="arithmatex">\(&lt;\)</span> 为 <span class="arithmatex">\(f(F)&lt;g(F)\leftrightarrow \{n|f(n)&lt;g(n)\}\in F\)</span>, 称作 <span class="arithmatex">\(f\)</span> 关于 <span class="arithmatex">\(F\)</span> 几乎小于 <span class="arithmatex">\(g\)</span>, 记作 <span class="arithmatex">\(f&lt;_Fg\)</span><ul>
+<li><span class="arithmatex">\(k&lt;m\to \{n|k(n)&lt;m(n)\}=N\in F\to k(F)&lt;m(F)\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(^*N\)</span> 的基本性质<ol>
+<li>加法<ul>
+<li>加法交换律: <span class="arithmatex">\(\forall f(F),g(F)\in ^*N(f(F)+g(F)=g(F)+f(F))\)</span></li>
+<li>加法结合律: <span class="arithmatex">\(\forall f(F),g(F),h(F)\in ^*N((f(F)+g(F))+h(F)=f(F)+(g(F)+h(F)))\)</span></li>
+</ul>
+</li>
+<li>乘法<ul>
+<li>乘法交换律: <span class="arithmatex">\(\forall f(F),g(F)\in ^*N(f(F)\cdot g(F)=g(F)\cdot f(F))\)</span></li>
+<li>乘法结合律: <span class="arithmatex">\(\forall f(F),g(F),h(F)\in ^*N((f(F)\cdot g(F))\cdot h(F)=f(F)\cdot (g(F)\cdot h(F)))\)</span></li>
+<li>乘法对加法的分配律: <span class="arithmatex">\(\forall f(F),g(F),h(F)\in ^*N(f(F)\cdot (g(F)+h(F))=f(F)\cdot g(F)+f(F)\cdot h(F))\)</span></li>
+</ul>
+</li>
+<li>本原元<ul>
+<li>零元: <span class="arithmatex">\(\forall f(F)\in ^*N(f(F)+0(F)=f(F))\)</span></li>
+<li>单位元: <span class="arithmatex">\(\forall f(F)\in ^*N(f(F)\cdot 1(F)=f(F))\)</span></li>
+<li><span class="arithmatex">\(\overline{0}\neq \overline{1}\)</span></li>
+</ul>
+</li>
+<li>序<ul>
+<li>反自反性: <span class="arithmatex">\(f(F)\nless f(F)\)</span></li>
+<li>可递性: <span class="arithmatex">\((f(F)&lt;g(F)\wedge g(F)&lt;h(F))\to f(F)&lt;h(F)\)</span></li>
+<li>三歧性: <span class="arithmatex">\(f(F)&lt;g(F)\vee f(F)=g(F)\vee g(F)&lt;f(F)\)</span></li>
+<li>加法保序性: <span class="arithmatex">\(f(F)&lt;g(F)\to f(F)+h(F)&lt;g(F)+h(F)\)</span></li>
+<li>乘法保序性: <span class="arithmatex">\((f(F)&lt;g(F)\wedge h(F)\neq \overline{0})\to f(F)h(F)&lt;g(F)h(F)\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(N\)</span> 嵌入 <span class="arithmatex">\(^*N\)</span><ul>
+<li>令 <span class="arithmatex">\(\overline{N}=\{\overline{n}|n\in N\}\subset ^*N\)</span>, 它是主超滤集合, 且构成 <span class="arithmatex">\(^*N\)</span> 对运算的封闭子集<ul>
+<li>考虑映射 <span class="arithmatex">\(\varphi (n):N\to \overline{N}, \varphi (n)=\overline{n}\)</span>. 则 <span class="arithmatex">\(\varphi\)</span> 为保序保运算的双射</li>
+<li>称 <span class="arithmatex">\(N\)</span> 与 <span class="arithmatex">\(\overline{N}\)</span> 同构, <span class="arithmatex">\(\varphi\)</span> 把 <span class="arithmatex">\(N\)</span> 同构嵌入 <span class="arithmatex">\(^*N\)</span>, 将 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(\overline{n}\)</span> 视作同一符号</li>
+</ul>
+</li>
+<li>
+<p>令 <span class="arithmatex">\(N_{\infty}=^*N-\overline{N}\)</span>, 它是非主算术超滤的集合</p>
+<ul>
+<li><span class="arithmatex">\(\tau \in N_{\infty} \to \forall m\in N(\tau &gt;\overline{m})\)</span>. 即 <span class="arithmatex">\(N_{\infty}\)</span> 的成员都是「无穷大数」</li>
+<li>可以将 <span class="arithmatex">\(^*N\)</span> 的元素排成一列:</li>
+</ul>
+<div class="arithmatex">\[
+0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots 
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">转换原理</p>
+<p>现取语言 <span class="arithmatex">\(\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}\)</span>, 使 <span class="arithmatex">\(^*N=\{f(F)|f\in ^NN\}\)</span> 成为语言 <span class="arithmatex">\(\mathcal{L}\)</span> 的结构. 令 <span class="arithmatex">\(\mathcal{L}\cup \{F\}=\{F,0,+,\cdot ,f,g,h,\cdots \}\)</span>, <span class="arithmatex">\(F\)</span> 为算术超滤. 则有</p>
+<p><p align="center"><span class="arithmatex">\(\varphi\)</span> 在 <span class="arithmatex">\(^*N\)</span> 中为真 <span class="arithmatex">\(\leftrightarrow \{n\in N|\varphi (n)\in F\}\)</span><p></p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="344">3.4.4 自然数数列的延伸</h3>
+<ol>
+<li>
+<p>对 <span class="arithmatex">\(\forall h:N\to N\)</span>, 可以扩充为 <span class="arithmatex">\(h:^*N\to ^*N\)</span>, 于是得到以下序列, 称为自然数列的延伸:</p>
+<div class="arithmatex">\[
+h(0),h(1),h(2),\cdots ,h(n),\cdots ,h(\tau ),h(\tau +1),\cdots 
+\]</div>
+</li>
+<li>
+<p>延伸的性质</p>
+<ul>
+<li>序保持: <span class="arithmatex">\(\forall n\in N(h(n)&lt;g(n))\to \forall \tau \in N_{\infty}(h(\tau )&lt;g(\tau ))\)</span></li>
+<li>单调性保持: <span class="arithmatex">\(\forall i,j\in N(i&lt;j\to h(i)&lt;h(j))\to \forall x,y\in ^*N(x&lt;y\to h(x)&lt;h(y))\)</span></li>
+<li>「分数」的单调性保持: 若 <span class="arithmatex">\(\forall i,j\in N(i&lt;j\to h(i)l(j)&lt;h(j)l(i))\)</span>, 则 <span class="arithmatex">\(\forall x,y\in ^*N(x&lt;y\to h(x)l(y)&lt;h(y)l(x))\)</span></li>
+</ul>
+</li>
+</ol>
+<h2 id="35">3.5 实数理论</h2>
+<h3 id="351-archimedes">3.5.1 Archimedes 序域</h3>
+<ol>
+<li>
+<p>仿照先前的过程可以得到 <span class="arithmatex">\(^*Z\)</span> 和 <span class="arithmatex">\(^*Q\)</span>, 两者的形象如下</p>
+<div class="arithmatex">\[
+\displaylines{^*Z:\cdots ,-\tau ,\cdots ,-2,-1,0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots \\
+^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
+\]</div>
+</li>
+<li>
+<p>定义 <span class="arithmatex">\(^*Q\)</span> 的 Archimedes 子集:</p>
+<ul>
+<li><span class="arithmatex">\(Q_&lt;=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}\)</span>, 这一性质意味着量的有限可测量性. 作为序域, <span class="arithmatex">\(^*Q\)</span> 是一种非 Archimedes 序域. 若 <span class="arithmatex">\(x,y\in Q_&lt;\)</span>, 则 <span class="arithmatex">\(x+y\in Q_&lt;,x\cdot y\in Q_&lt;\)</span></li>
+<li><span class="arithmatex">\(I=\{\alpha \in ^*Q|\forall k\in N(|x|\leqslant k)\}\)</span>, 称作无穷小<ul>
+<li><span class="arithmatex">\(I\subset Q_&lt;\)</span></li>
+<li><span class="arithmatex">\(\alpha ,\beta \in I\to \alpha +\beta \in I\)</span></li>
+<li><span class="arithmatex">\(\alpha \in I\wedge x\in Q_&lt;\to x\cdot \alpha \in I\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="352">3.5.2 实数的构造</h3>
+<ol>
+<li>在 <span class="arithmatex">\(Q_&lt;\)</span> 中定义等价关系 <span class="arithmatex">\(x\sim y\leftrightarrow x-y\in I\)</span><ul>
+<li>记 <span class="arithmatex">\(x\in Q_&lt;\)</span> 所在的等价类为 <span class="arithmatex">\([x]=\{y\in Q_&lt;|y\sim x\}\)</span>, 等价类构成的集合为 <span class="arithmatex">\(Q_&lt;/\sim =\{[x]|x\in Q_&lt;\}\)</span>, 记作 <span class="arithmatex">\(R\)</span></li>
+</ul>
+</li>
+<li>运算性质<ol>
+<li><span class="arithmatex">\(Q_&lt;/\sim\)</span> 上的加法: <span class="arithmatex">\([x]+[y]=[x+y]\)</span><ul>
+<li>交换律: <span class="arithmatex">\(\forall [x],[y]\in Q_&lt;/\sim ([x]+[y]=[y]+[x])\)</span></li>
+<li>结合律: <span class="arithmatex">\(\forall [x],[y],[z]\in Q_&lt;/\sim (([x]+[y])+[z]=[x]+([y]+[z]))\)</span></li>
+<li>零元: <span class="arithmatex">\(\forall [x]\in Q_&lt;/\sim ([x]+[0] =[x])\)</span></li>
+<li>负元: <span class="arithmatex">\(\forall [x]\in Q_&lt;/\sim \exists [-x]\in Q_&lt;/\sim ([x]+[-x]=[0]])\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(Q_&lt;/\sim\)</span> 上的乘法: <span class="arithmatex">\([x]\cdot [y]=[x\cdot y]\)</span><ul>
+<li>交换律: <span class="arithmatex">\(\forall [x],[y]\in Q_&lt;/\sim ([x]\cdot [y]=[y]\cdot [x])\)</span></li>
+<li>结合律: <span class="arithmatex">\(\forall [x],[y],[z]\in Q_&lt;/\sim (([x]\cdot [y])\cdot [z]=[x]\cdot ([y]\cdot [z]))\)</span></li>
+<li>对加法的分配律: <span class="arithmatex">\(\forall [x],[y],[z]\in Q_&lt;/\sim ([x]\cdot ([y]+[z])=[x]\cdot [y]+[x]\cdot [z])\)</span></li>
+<li>单位元: <span class="arithmatex">\(\forall [x]\in Q_&lt;/\sim ([x]\cdot [1]=[x])\)</span></li>
+<li>逆元: <span class="arithmatex">\([x]\neq 0\to (\dfrac{1}{x}\in Q_&lt; \wedge [x]\cdot \left[ \dfrac{1}{x}\right]=[1])\)</span></li>
+</ul>
+</li>
+<li><span class="arithmatex">\(Q_&lt;/\sim\)</span> 上的序: 规定 <span class="arithmatex">\([x]&lt;[y]\leftrightarrow x&lt;y\wedge x\nsim y\)</span><ul>
+<li>反自反性: <span class="arithmatex">\(\forall [x]\in Q_&lt;/\sim ([x]\nless [x])\)</span></li>
+<li>可递性: <span class="arithmatex">\(\forall [x],[y],[z]\in Q_&lt;/\sim (([x]&lt;[y]\wedge [y]&lt;[z])\to [x]&lt;[z])\)</span></li>
+<li>三歧性: <span class="arithmatex">\(\forall [x],[y]\in Q_&lt;/\sim ([x]&lt;[y]\vee [x]=[y]\vee [y]&lt;[x])\)</span></li>
+<li>加法保序性: <span class="arithmatex">\(\forall [x],[y],[z]\in Q_&lt;/\sim ([x]&lt;[y]\to [x]+[z]&lt;[y]+[z])\)</span></li>
+<li>乘法保序性: <span class="arithmatex">\(\forall [x],[y],[z]\in Q_&lt;/\sim ([z]&gt;[0]\to ([x]&lt;[y]\to [x]\cdot [z]&lt;[y]\cdot [z]))\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\left&lt; Q_{&lt;}/\sim ,+,\cdot ,&lt;,[0],[1],\right&gt;\)</span> 拥有上述性质, 是一个序域<ul>
+<li><span class="arithmatex">\(Q,Q_&lt;\)</span> 有 Archimedes 性质, 而 <span class="arithmatex">\(^*Q\)</span> 没有. 但 <span class="arithmatex">\(Q_&lt;\)</span> 不是域, 而将 <span class="arithmatex">\(Q_&lt;\)</span> 剖分成的 <span class="arithmatex">\(R\)</span> 是一个序域</li>
+<li>定义 <span class="arithmatex">\(\overline{Q}=\{[r]|r\in Q\}\)</span>, 它关于加法, 乘法成了 <span class="arithmatex">\(R\)</span> 的封闭子集. 再令 <span class="arithmatex">\(H(r)=[r],H:Q\to \overline{Q}\)</span> 即为所需要的嵌入映射(保运算性, 保序性, 双射). 于是 <span class="arithmatex">\(Q\)</span> 与 <span class="arithmatex">\(\overline{Q}\)</span> 同构, <span class="arithmatex">\(H\)</span> 把 <span class="arithmatex">\(Q\)</span> 同构嵌入 <span class="arithmatex">\(R\)</span>. <span class="arithmatex">\(\overline{Q}\)</span> 成为 <span class="arithmatex">\(Q\)</span>, <span class="arithmatex">\(Q\subset R\)</span></li>
+<li>令实数集 <span class="arithmatex">\(R=\left\{ \left. \left[ \dfrac{q}{p}\right] \right| p\neq 0, p,q\in ^*Z, \exists k\in N\left( \left| \dfrac{q}{p}\right| \leqslant k\right) \right\}\)</span><ul>
+<li>新的实数零为无穷小集: <span class="arithmatex">\(0=[0]=\{x\in Q_&lt;|x\sim 0\}=I\)</span></li>
+<li>Archimedes 性质: <span class="arithmatex">\(\forall a\in R\exists k\in N(|a|\leqslant k)\)</span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(R\)</span> 的完备性<ul>
+<li><span class="arithmatex">\(Q\)</span> 在 <span class="arithmatex">\(R\)</span> 中稠密: <span class="arithmatex">\(\forall a,b\in R(a&lt;b\to \exists r\in Q(a&lt;r&lt;b))\)</span></li>
+<li>
+<p>实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 <span class="arithmatex">\(R\)</span> 称为完备序域, <span class="arithmatex">\(Q\)</span> 不具备这种完备性</p>
+<div class="admonition note">
+<p class="admonition-title">证明完备性的引理</p>
+<p>在 <span class="arithmatex">\(R\)</span> 中, 严格单调递增且有上界的有理数列必有最小上界</p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../relation/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2 关系与映射" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              2 关系与映射
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../ordinal/" class="md-footer__link md-footer__link--next" aria-label="下一页: 4 序数" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              4 序数
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/ShiinaHiiragi" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/ShiinaHiiragi" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="../../../extra/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,869 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <meta name="author" content="一之江">
+      
+      
+        <link rel="canonical" href="https://shiinahiiragi.github.io/note/foundation/set/relation/">
+      
+      <link rel="icon" href="../../../extra/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>2 关系与映射 - 数理逻辑</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../extra/config.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="" data-md-color-accent="pink">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="数理逻辑" class="md-header__button md-logo" aria-label="数理逻辑" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75z"/><path fill-rule="evenodd" d="M5 8.75A.75.75 0 0 1 5.75 8h11.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 8.75zm0 4a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            数理逻辑
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 关系与映射
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/ShiinaHiiragi/note/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        通用
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../logic/proposition/" class="md-tabs__link md-tabs__link--active">
+        数学基础
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="数理逻辑" class="md-nav__button md-logo" aria-label="数理逻辑" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75z"/><path fill-rule="evenodd" d="M5 8.75A.75.75 0 0 1 5.75 8h11.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 8.75zm0 4a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75z"/></svg>
+
+    </a>
+    数理逻辑
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/ShiinaHiiragi/note/" title="前往 GitHub 仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" data-md-state="indeterminate" type="checkbox" id="__nav_1" checked>
+      
+      <label class="md-nav__link" for="__nav_1">
+        通用
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="通用" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          通用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../license/" class="md-nav__link">
+        许可证
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        数学基础
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="数学基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数学基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" data-md-state="indeterminate" type="checkbox" id="__nav_2_1" checked>
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        一、一阶逻辑
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="一、一阶逻辑" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          一、一阶逻辑
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/proposition/" class="md-nav__link">
+        1 命题逻辑
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logic/predicate/" class="md-nav__link">
+        2 谓词逻辑
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        二、公理集合论
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="二、公理集合论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、公理集合论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zfc/" class="md-nav__link">
+        1 ZFC 集合论
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2 关系与映射
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        2 关系与映射
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 关系
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-descartes" class="md-nav__link">
+    2.1.1 Descartes 积
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.1.2 关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 映射
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../real/" class="md-nav__link">
+        3 实数理论
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ordinal/" class="md-nav__link">
+        4 序数
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cardinal/" class="md-nav__link">
+        5 势与基数
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        五、模型论
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="五、模型论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          五、模型论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model/model/" class="md-nav__link">
+        1 结构与模型
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 关系
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 关系">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-descartes" class="md-nav__link">
+    2.1.1 Descartes 积
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.1.2 关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 映射
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ShiinaHiiragi/note/edit/master/docs/foundation/set/relation.md" title="编辑此页" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="2">2 关系与映射</h1>
+<h2 id="21">2.1 关系</h2>
+<h3 id="211-descartes">2.1.1 Descartes 积</h3>
+<ul>
+<li>定义: <span class="arithmatex">\(a\times b=\{(x,y)|x\in a \vee y\in b\}\)</span>, 这个定义的合法性由内涵公理, 有序对的定义和引理 <span class="arithmatex">\((x\in a \wedge y\in b)\to (x,y)\in \mathcal{p}(\mathcal{p}(a\cup b))\)</span> 保证</li>
+<li>拓展到 <span class="arithmatex">\(n\)</span> 个集合的 <span class="arithmatex">\(\mathrm{Descartes}\)</span> 积: <span class="arithmatex">\(A_1\times A_2\times \cdots \times A_n=\{(x_1,x_2,\cdots ,x_n)|x_1\in A_1,x_2\in A_2,\cdots ,x_n\in A_n\}\)</span> </li>
+</ul>
+<h3 id="212">2.1.2 关系</h3>
+<ol>
+<li>
+<p>定义: 若 <span class="arithmatex">\(r\subset a\times b\)</span>, 则 <span class="arithmatex">\(r\)</span> 为 a 到 b 上的一个关系, 写作 <span class="arithmatex">\(r(x,y)\)</span> 或 <span class="arithmatex">\(xry\)</span>. 若 <span class="arithmatex">\(r\subset \underbrace{a\times a\times \cdots\times a}_n\)</span>, 则 <span class="arithmatex">\(r\)</span> 称作 <span class="arithmatex">\(a\)</span> 的 <span class="arithmatex">\(n\)</span> 元关系. 且有</p>
+<div class="arithmatex">\[
+\displaylines{(x_1,x_2,\cdots ,x_n)\in r\leftrightarrow r(x_1,x_2,\cdots ,x_n)\\(x_1,x_2,\cdots ,x_n)\notin r\leftrightarrow \neg r(x_1,x_2,\cdots ,x_n)}
+\]</div>
+</li>
+<li>
+<p>相关概念</p>
+<ul>
+<li><span class="arithmatex">\(\mathrm{Dom}(r)=\{x\in a|\exists y\in b((x,y)\in r)\}\)</span><br />
+<span class="arithmatex">\(\mathrm{Ran}(r)=\{y\in b|\exists x\in a((x,y)\in r)\}\)</span></li>
+<li><span class="arithmatex">\(r\subset a\times b,c\in a\)</span>, <span class="arithmatex">\(r\)</span> 在 <span class="arithmatex">\(c\)</span> 上的限制 <span class="arithmatex">\(r|c=\{(x,y)\in r|x\in c\}\)</span><ul>
+<li><span class="arithmatex">\(\mathrm{Dom}(r|c)=\mathrm{Dom}(r)\cap c\)</span></li>
+<li>记 <span class="arithmatex">\(\mathrm{Ran}(r|c)=r[c]\)</span>, 称之为 <span class="arithmatex">\(c\)</span> 在 <span class="arithmatex">\(r\)</span> 下的象.<br />
+  若 <span class="arithmatex">\(c\subset b\)</span>, 则 <span class="arithmatex">\(r^{-1}[c]\)</span> 为 <span class="arithmatex">\(c\)</span> 在 <span class="arithmatex">\(r\)</span> 下的原象</li>
+</ul>
+</li>
+<li><span class="arithmatex">\(r^{-1}=\{(y,x)|(x,y)\in r\}\)</span>, 于是 <span class="arithmatex">\(\mathrm{Dom}(r^{-1})=\mathrm{Ran}(r)\)</span>, <span class="arithmatex">\(\mathrm{Ran}(r^{-1})=\mathrm{Dom}(r)\)</span></li>
+<li><span class="arithmatex">\(r\subset a\times b,s\subset b\times c\)</span>, 则 <span class="arithmatex">\(s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}\)</span>, 且有 <span class="arithmatex">\((s\circ r)^{-1}=r^{-1}\circ s^{-1}\)</span></li>
+</ul>
+</li>
+<li>二元关系:  <span class="arithmatex">\(R\subset a\times a\)</span>, 则称 <span class="arithmatex">\(R\)</span> 是 <span class="arithmatex">\(a\)</span> 上的一个二元关系<ul>
+<li>自反性: <span class="arithmatex">\(\forall x\in a(xRx)\)</span><br />
+  反自反性: <span class="arithmatex">\(\forall x\in a((x,x)\notin R)\)</span></li>
+<li>对称性: <span class="arithmatex">\(\forall x,y\in a(xRy\to yRx)\)</span><br />
+  反对称性: <span class="arithmatex">\(\forall x,y\in a((xRy\wedge yRx)\to x=y)\)</span></li>
+<li>可递性: <span class="arithmatex">\(\forall x,y,z\in a((xRy\wedge yRz)\to xRz)\)</span></li>
+</ul>
+</li>
+<li>等价关系: 设 <span class="arithmatex">\(R\subset a^2\)</span>, 若 <span class="arithmatex">\(R\)</span> 同时有自反性, 对称性, 可递性, 则称 <span class="arithmatex">\(R\)</span> 为 <span class="arithmatex">\(a\)</span> 上的等价关系. 如果只有一个等价关系, 则 <span class="arithmatex">\(xRy\)</span> 可以记作 <span class="arithmatex">\(x\sim y\)</span><ol>
+<li>等价类: 任取 <span class="arithmatex">\(x\in a\)</span>, 记 <span class="arithmatex">\([x]=\{t\in a|t\sim x\}\)</span>, 则将 <span class="arithmatex">\([x]\)</span> 称作 <span class="arithmatex">\(x\)</span> 的等价类<ul>
+<li><span class="arithmatex">\(x\in [x]\)</span></li>
+<li><span class="arithmatex">\(x\sim y\to [x]=[y]\)</span></li>
+<li>不同的等价类没有公共元素: <span class="arithmatex">\([x]\neq [y]\to [x]\cap [y]=\varnothing\)</span></li>
+</ul>
+</li>
+<li>剖分/分类: 集合 <span class="arithmatex">\(a\)</span> 的子集族 <span class="arithmatex">\(P\subset \mathcal{P}(a)\)</span> 若满足 <span class="arithmatex">\(\cup P=a\)</span> 且 <span class="arithmatex">\(\varnothing \notin P\vee(\forall b,c\in P(b\neq c\to b\cap c=\varnothing))\)</span>, 则 <span class="arithmatex">\(P\)</span> 称为集合 <span class="arithmatex">\(a\)</span> 的剖分/分类</li>
+<li>商集: 设 <span class="arithmatex">\(R\)</span> 是集合 <span class="arithmatex">\(a\)</span> 上面的一个等价关系, 关于 <span class="arithmatex">\(R\)</span>, 所有的等价类的集合记作 <span class="arithmatex">\(a/R=\{[x]|x\in a\}\)</span>, 称作 <span class="arithmatex">\(a\)</span> 关于 <span class="arithmatex">\(R\)</span> 的商集<ul>
+<li><span class="arithmatex">\(a/R\)</span> 唯一对应了 <span class="arithmatex">\(a\)</span> 的一个剖分</li>
+<li>设 <span class="arithmatex">\(P\)</span> 是 <span class="arithmatex">\(a\)</span> 的一个剖分, 用 <span class="arithmatex">\(P\)</span> 可以唯一定义 <span class="arithmatex">\(a\)</span> 上的等价关系 <span class="arithmatex">\(R=\{(x,y)\in a^2|\exists b\in P(x\in b\wedge y\in b)\}\)</span>, 且有 <span class="arithmatex">\(a/R=P\)</span></li>
+</ul>
+</li>
+<li>总而言之, 集合上所有等价关系与所有剖分之间存在一一对应</li>
+</ol>
+</li>
+<li>偏序<ol>
+<li>偏序关系: 若集合 <span class="arithmatex">\(a\)</span> 上的二元关系 <span class="arithmatex">\(r\subset a^2\)</span> 具有自反性, 反对称性和可递性, 则称 <span class="arithmatex">\(r\)</span> 为 <span class="arithmatex">\(a\)</span> 上的偏序关系, 并称 <span class="arithmatex">\(a\)</span> 为 <span class="arithmatex">\(r-\)</span>偏序集<ul>
+<li>一般记 <span class="arithmatex">\(xry\)</span> 为 <span class="arithmatex">\(x\leqslant y\)</span>, 偏序集 <span class="arithmatex">\(a\)</span> 连同其上的偏序 <span class="arithmatex">\(r\)</span> 形成偏序结构 <span class="arithmatex">\(\left&lt; a,r\right&gt;\)</span>, 也记作 <span class="arithmatex">\(\left&lt; a,\leqslant \right&gt;\)</span></li>
+</ul>
+</li>
+<li>若集合 <span class="arithmatex">\(a\)</span> 上的二元关系 <span class="arithmatex">\(s\subset a^2\)</span> 具有反自反性和可递性, 则称 <span class="arithmatex">\(s\)</span> 为 <span class="arithmatex">\(a\)</span> 上的严格偏序关系, 其结构记作 <span class="arithmatex">\(\left&lt; a,&lt;\right&gt;\)</span>. 且有 <span class="arithmatex">\(x&lt;y\leftrightarrow x\leqslant y\wedge x\neq y\)</span></li>
+<li>设 <span class="arithmatex">\(a\)</span> 为偏序集, <span class="arithmatex">\(x\in a\)</span>, 那么最小元和最大元分别一定是极小元和极大元, 其中<ul>
+<li>若 <span class="arithmatex">\(\forall y\in a(y\nless x)\)</span>, 则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(a\)</span> 的极小元</li>
+<li>若 <span class="arithmatex">\(\forall y\in a(x\leqslant y)\)</span>, 则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(a\)</span> 的最小元</li>
+<li>若 <span class="arithmatex">\(\forall y\in a(x\nless y)\)</span>, 则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(a\)</span> 的极大元</li>
+<li>若 <span class="arithmatex">\(\forall y\in a(y\leqslant x)\)</span>, 则称 <span class="arithmatex">\(x\)</span> 为 <span class="arithmatex">\(a\)</span> 的最大元</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="22">2.2 映射</h2>
+<ol>
+<li>相关定义<ul>
+<li>映射: <span class="arithmatex">\(f\subset a\times b\)</span>, <span class="arithmatex">\(\forall x\in a\exists !y\in b((x,y)\in f)\)</span>, 则 <span class="arithmatex">\(f\)</span> 称为 <span class="arithmatex">\(a\)</span> 到 <span class="arithmatex">\(b\)</span> 的映射. <span class="arithmatex">\((x,y)\in f\)</span> 记作 <span class="arithmatex">\(y=f(x)\)</span>. <span class="arithmatex">\(f:A^n\to A\)</span> 称作 <span class="arithmatex">\(A\)</span> 上的 <span class="arithmatex">\(n\)</span> 元运算</li>
+<li>复合映射: <span class="arithmatex">\(g\circ f(x)=g(f(x)), x\in a\)</span></li>
+<li>逆映射: <span class="arithmatex">\(f^{-1}=\{(y,x)|(x,y)\in f\}\)</span></li>
+</ul>
+</li>
+<li>性质<ul>
+<li>单值性: <span class="arithmatex">\((x,y_1)\in f \wedge (x,y_2)\in f\to y_1=y_2\)</span></li>
+<li><span class="arithmatex">\(f\subset a\times b\)</span>, 则 <span class="arithmatex">\(\mathrm{Dom}(f)=a, \mathrm{Ran}(f)\subset b\)</span></li>
+<li><span class="arithmatex">\(c\subset a\)</span>, 则 <span class="arithmatex">\(f[c]=\{f(x)|x\in c\}\)</span><br />
+<span class="arithmatex">\(c\subset b\)</span>, 则 <span class="arithmatex">\(f^{-1}[c]=\{x\in a|f(x)\in c\}\)</span></li>
+</ul>
+</li>
+<li>映射的种类<ul>
+<li>满射, 单射, 双射<ol>
+<li>若 <span class="arithmatex">\(f[a]=b\)</span>, 则 <span class="arithmatex">\(f\)</span> 为满射</li>
+<li>若 <span class="arithmatex">\(\forall x_1,x_2\in a(x_1\neq x_2\to f(x_1)\neq f(x_2))\)</span>, 则 <span class="arithmatex">\(f\)</span> 为单射</li>
+<li>若 <span class="arithmatex">\(f\)</span> 同时为满射与单射, 则 <span class="arithmatex">\(f\)</span> 为双射. 此时 <span class="arithmatex">\(\forall x\in a\exists !y\in b((x,y)\in f)\)</span>, <span class="arithmatex">\(\forall y\in b\exists !x\in a((x,y)\in f)\)</span></li>
+</ol>
+</li>
+<li>单射与单射复合为单射, 双射与双射复合为双射</li>
+<li>函数 <span class="arithmatex">\(f\)</span> 有反函数当且仅当 <span class="arithmatex">\(f\)</span> 为单射, 双射的反函数仍为双射</li>
+</ul>
+</li>
+<li>其他定义<ul>
+<li><span class="arithmatex">\(g=f|c\)</span>, 则 <span class="arithmatex">\(\forall x\in c(f(x)=g(x))\)</span>, 称 <span class="arithmatex">\(f\)</span> 为 <span class="arithmatex">\(g\)</span> 的扩张</li>
+<li>定义 <span class="arithmatex">\(^{a}b=\{f|f:a\to b\}\)</span>, 该定义的合法性由 <span class="arithmatex">\(^{a}b\subset \mathcal{P}(a\times b)\)</span> 保证. 当 <span class="arithmatex">\(b\subset c\)</span> 时, <span class="arithmatex">\(^{a}b\subset ^{a}c\)</span></li>
+</ul>
+</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../zfc/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1 ZFC 集合论" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              1 ZFC 集合论
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../real/" class="md-footer__link md-footer__link--next" aria-label="下一页: 3 实数理论" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              3 实数理论
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/ShiinaHiiragi" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/ShiinaHiiragi" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+        <script src="../../../extra/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

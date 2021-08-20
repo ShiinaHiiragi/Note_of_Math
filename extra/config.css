@@ -1,0 +1,22 @@
+::selection {
+  background-color: rgb(204, 226, 255);
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.progress-container {
+  height: 20px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.progress-percentage {
+  text-align: right;
+  padding-right: 20px;
+  line-height: 20px;
+  background-color: rgb(255, 145, 0);
+  color: white;
+}
